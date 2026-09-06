@@ -25,7 +25,7 @@ for (const file of [
   if (!html.includes(file)) throw new Error(`Missing script reference: ${file}`);
 }
 
-if (!runtime.includes("registerEngine") || !runtime.includes("mountEngine")) {
+if (!runtime.includes("registerEngine") || !runtime.includes("mountEngine") || !runtime.includes("destroy")) {
   throw new Error("Runtime engine lifecycle is incomplete");
 }
 
