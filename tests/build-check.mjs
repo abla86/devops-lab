@@ -33,7 +33,7 @@ for (const marker of ["Checkout","Lint/Security","Container Build","K8s Rollout"
   if (!dag.includes(marker)) throw new Error(`Pipeline stage missing: ${marker}`);
 }
 
-if (!prober.includes("healthy") || !prober.includes("restarts")) {
+if (!prober.includes("healthy") || !prober.includes("restarts") || !prober.includes("simulated HTTP 200")) {
   throw new Error("Container prober health state is incomplete");
 }
 
